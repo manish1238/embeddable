@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Test My Service Widget</title>
+    <style>
+        /* Floating button style */
+        #widget-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #007bff;
+            color: white;
+            font-size: 30px;
+            line-height: 60px;
+            text-align: center;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Panel style */
+        #widget-panel {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 300px;
+            padding: 20px;
+            background: #fff;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            display: none;
+        }
+
+        #widget-panel input[type=number] {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+
+        #widget-panel button {
+            padding: 10px 15px;
+            background: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #widget-result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Floating button -->
+    <div id="widget-button">+</div>
+
+    <!-- Hidden panel -->
+    <div id="widget-panel">
+        <h3>My Awesome Service</h3>
+        <p>Enter two numbers:</p>
+        <input id="num1" type="number" placeholder="Number 1">
+        <input id="num2" type="number" placeholder="Number 2">
+        <button id="computeBtn">Compute Sum</button>
+        <div id="widget-result"></div>
+    </div>
+
+    <script>
+        // Toggle panel
+        const btn = document.getElementById('widget-button');
+        const panel = document.getElementById('widget-panel');
+        btn.addEventListener('click', () => {
+            panel.style.display = (panel.style.display === 'block') ? 'none' : 'block';
+        });
+
+        // Compute logic
+        document.getElementById('computeBtn').addEventListener('click', () => {
+            const a = parseFloat(document.getElementById('num1').value) || 0;
+            const b = parseFloat(document.getElementById('num2').value) || 0;
+
+            // **Here**: call your service's method
+            if (window.myAwesomeService && typeof window.myAwesomeService.add === 'function') {
+                const result = window.myAwesomeService.add(a, b);
+                document.getElementById('widget-result').innerText = 'Result: ' + result;
+            } else {
+                document.getElementById('widget-result').innerText = 'Service not loaded.';
+            }
+        });
+    </script>
+
+    <!-- Include your JS service script -->
+    <script src="https://yourusername.github.io/your-repo/service.js"></script>
+
+</body>
+
+</html>

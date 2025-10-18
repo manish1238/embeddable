@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test My Service Widget</title>
     <style>
         /* Floating button style */
@@ -85,7 +86,7 @@
             const a = parseFloat(document.getElementById('num1').value) || 0;
             const b = parseFloat(document.getElementById('num2').value) || 0;
 
-            // **Here**: call your service's method
+            // Call service's add method
             if (window.myAwesomeService && typeof window.myAwesomeService.add === 'function') {
                 const result = window.myAwesomeService.add(a, b);
                 document.getElementById('widget-result').innerText = 'Result: ' + result;

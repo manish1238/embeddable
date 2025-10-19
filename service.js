@@ -67,7 +67,8 @@
       const a = parseFloat(document.getElementById("num1").value) || 0;
       const b = parseFloat(document.getElementById("num2").value) || 0;
       const result = window.myAwesomeService.add(a, b);
-      document.getElementById("widget-result").innerText = "Final Result: " + result;
+      document.getElementById("widget-result").innerText =
+        "Final Result: " + result;
     }
   });
 })();

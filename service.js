@@ -38,8 +38,8 @@
     font-family: Poppins, sans-serif;
   `;
   panel.innerHTML = `
-    <h3 style="margin:0 0 10px;color:#e67e22;">My Awesome Service</h3>
-    <p style="margin-bottom:6px;">Enter two numbers:</p>
+    <h3 style="margin:0 0 10px;color:#e67e22;">My Awesome Servic 1.1.0e</h3>
+    <p style="margin-bottom:6px;">Enter two numbers please:-</p>
     <input id="num1" type="number" placeholder="Number 1" style="width:100%;padding:8px;margin-bottom:6px;border:1px solid #ccc;border-radius:6px;">
     <input id="num2" type="number" placeholder="Number 2" style="width:100%;padding:8px;margin-bottom:8px;border:1px solid #ccc;border-radius:6px;">
     <button id="computeBtn" style="width:100%;padding:10px;background:#27ae60;color:white;border:none;border-radius:6px;cursor:pointer;">Compute Sum</button>
@@ -67,7 +67,7 @@
       const a = parseFloat(document.getElementById("num1").value) || 0;
       const b = parseFloat(document.getElementById("num2").value) || 0;
       const result = window.myAwesomeService.add(a, b);
-      document.getElementById("widget-result").innerText = "Result: " + result;
+      document.getElementById("widget-result").innerText = "Final Result: " + result;
     }
   });
 })();
